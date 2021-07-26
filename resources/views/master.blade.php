@@ -54,5 +54,9 @@
         margin-bottom: 20px;
         padding-bottom: 20px
     }
+    .site-footer {
+        background-image: linear-gradient(#00ff55,#1aa12c,#092400);
+        margin-top: 5%;
+    }
 </style>
 </html>
