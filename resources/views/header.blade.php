@@ -41,6 +41,7 @@ if(Session::has('user'))//shashila
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/logout">Logout</a></li>
+              <li><a href="/product">Add Crops</a></li>
             </ul>
           </li>
           @else
