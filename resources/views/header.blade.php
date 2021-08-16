@@ -1,5 +1,6 @@
 <?php 
 use App\Http\Controllers\ProductController;
+
 $total=0;
 if(Session::has('user'))//shashila
 {
@@ -17,7 +18,7 @@ if(Session::has('user'))//shashila
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Aswanna Home</a>
+        <a class="navbar-brand" href="/"><!--<img src="images/Aswanna.png" width="40px" height="27px" alt="අස්වැන්න">-->අස්වැන්න</a>
       </div>
   
       <!-- Collect the nav links, forms, and other content for toggling -->

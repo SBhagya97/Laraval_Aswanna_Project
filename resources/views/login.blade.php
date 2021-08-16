@@ -14,7 +14,9 @@
                 <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-default">Login</button>
+                <p>"Don't have an account yet?"</p><a href="/register">Sign Up</a></p>
             </form>
+            
         </div>
     </div>
 </div>
