@@ -14,9 +14,9 @@
           <label for="name" class="col-sm-3 control-label">Category</label>
           <div class="col-sm-9">
             <select class="form-control" name="select_cat">
-              <option value="texnolog2">Vegitables</option>
-              <option value="texnolog3">Fruits</option>
-              <option value="texnolog4">Grains</option>
+              <option value="Vegitables">Vegitables</option>
+              <option value="Fruits">Fruits</option>
+              <option value="Grains">Grains</option>
             </select>
           </div>
         </div> <!-- form-group // -->
