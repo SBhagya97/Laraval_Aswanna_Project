@@ -112,18 +112,31 @@ class ProductController extends Controller
     }
     function add(Request $req)
     {
-      return $req->input();  
+     
        $product=new Product();
-    
-            $product->name=$req->name;
-            $product->price=$req->price;
-            $product->select=$req->category;
-            $product->desc=$req->description;
-            $product->file_img=$req->gallery;
-            $product->save();
+            $image= $req->img;
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+                //$req->image->move('product_image',$imagename);
+                $image->move('product_image',$imagename);
+
+        $product->gallery=$imagename;
+        $product->name=$req->name;
+        $product->price=$req->price; 
+        $product->category=$req->select_cat;
+        $product->description=$req->desc;
+        $product->save();   
+        return redirect('/');
+        
+        
+        //     $product->name=$req->name;
+        //     $product->price=$req->price;
+        //     $product->select=$req->category;
+        //     $product->desc=$req->description;
+        //     $product->file_img=$req->gallery;
+        //     $product->save();
             
 
-        return view('/add_product');
+        // return view('/add_product');
        
     }
 

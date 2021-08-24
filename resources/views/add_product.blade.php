@@ -8,12 +8,12 @@
     </div>
     <div class="panel-body">
 
-      <form action="add" method= "POST"class="form-horizontal" role="form">
+      <form action="{{url('add_product')}}" method= "POST"class="form-horizontal" role="form" enctype="multipart/form-data">
       @csrf
         <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Category</label>
           <div class="col-sm-9">
-            <select class="form-control" name="select">
+            <select class="form-control" name="select_cat">
               <option value="texnolog2">Vegitables</option>
               <option value="texnolog3">Fruits</option>
               <option value="texnolog4">Grains</option>
@@ -24,19 +24,19 @@
         <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Product Name</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Name the product">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name the product" required>
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Price</label>
           <div class="col-sm-9">
-            <input type="number" class="form-control" name="price" id="name" placeholder="Unit Price">
+            <input type="number" class="form-control" name="price" id="name" placeholder="Unit Price" required>
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
-          <label for="about" class="col-sm-3 control-label" namespace="desc" aria-placeholder="Describe the product">Discription</label>
+          <label for="about" class="col-sm-3 control-label"  aria-placeholder="Describe the product">Discription</label>
           <div class="col-sm-9">
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control"name="desc" required></textarea>
           </div>
         </div> <!-- form-group // -->
 
@@ -54,7 +54,7 @@
         <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Thumbnails</label>
           <div class="col-sm-3">
-            <label class="control-label small" for="file_img">images (jpg/png):</label> <input type="file" name="file_img">
+            <label class="control-label small" for="file_img">images (jpg/png):</label> <input type="file" name="img">
           </div>
         </div> <!-- form-group // -->
 
