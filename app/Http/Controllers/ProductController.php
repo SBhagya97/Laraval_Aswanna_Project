@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
@@ -11,6 +11,7 @@ use App\Models\Order;
 
 use Session;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\HttpFoundation\Session\Session as SessionSession;
 
 class ProductController extends Controller
@@ -38,10 +39,33 @@ class ProductController extends Controller
     {
         if($req->session()->has('user'))
         {
-           $cart= new Cart;
-           $cart->user_id=$req->session()->get('user')['id'];
-           $cart->product_id=$req->product_id;
-           $cart->save();
+            $id = $req -> product_id;
+            $quan = $req -> quantity;
+            
+
+            $product = Product::find($id);
+            $price = $product->price;
+            $total = $price * $quan;
+            $user_id = $req->session()->get('user')['id'];
+
+            Cart:: create([
+                'product_id' => $id,
+                'user_id' => $user_id,
+                'quantity' => $quan,
+                'gross_price' => $total
+
+            ]);
+            // return $total;'
+
+           
+        //    $cart= new Cart;
+        //    $cart->user_id=$req->session()->get('user')['id'];
+        //    $cart->product_id=$req->product_id;
+        //    $cart->quantity=$req->quantity;
+        
+        //    //$cart->gross_price=$req->$gp;
+
+        //    $cart->save();
            return redirect('/');
 
         }
@@ -112,32 +136,39 @@ class ProductController extends Controller
     }
     function add(Request $req)
     {
-     
+    
        $product=new Product();
             $image= $req->img;
             $imagename=time().'.'.$image->getClientOriginalExtension();
                 //$req->image->move('product_image',$imagename);
                 $image->move('product_image',$imagename);
-
-        $product->gallery=$imagename;
+       
+        $product->gallery=$imagename;             
+       
+        $product->user_id=$req->session()->get('user')['id'];
         $product->name=$req->name;
         $product->price=$req->price; 
+        $product->quantity=$req->quantity;
         $product->category=$req->select_cat;
         $product->description=$req->desc;
+        $product->MFD=$req->MFD;
+        $product->EXP=$req->EXP;
         $product->save();   
         return redirect('/');
-        
-        
-        //     $product->name=$req->name;
-        //     $product->price=$req->price;
-        //     $product->select=$req->category;
-        //     $product->desc=$req->description;
-        //     $product->file_img=$req->gallery;
-        //     $product->save();
-            
-
-        // return view('/add_product');
+                        
        
+    }
+    function my_product()
+    {
+        $userId=Session::get('user')['id'];
+        //$allProduct= Product::where('user_id',$userId)->get();
+        return Product::where('user_id',$userId)->count();
+
+    }
+    function removeProduct($id)
+    {
+        Product::destroy($id);
+        return redirect('my_product');
     }
 
 

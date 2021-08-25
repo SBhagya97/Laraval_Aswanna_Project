@@ -19,7 +19,13 @@
               <option value="Grains">Grains</option>
             </select>
           </div>
-        </div> <!-- form-group // -->
+        </div> <!-- 
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">UID</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="uid" id="name" placeholder="Name the product" required>
+          </div>
+          User ID // -->
 
         <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Product Name</label>
@@ -28,11 +34,18 @@
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
-          <label for="name" class="col-sm-3 control-label">Price</label>
+          <label for="name" class="col-sm-3 control-label">Price Per kg</label>
           <div class="col-sm-9">
             <input type="number" class="form-control" name="price" id="name" placeholder="Unit Price" required>
           </div>
         </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">Quantity</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" name="quantity" id="name" placeholder="Quantity As kg" required>
+          </div>
+        </div> <!-- form-group // -->
+
         <div class="form-group">
           <label for="about" class="col-sm-3 control-label"  aria-placeholder="Describe the product">Discription</label>
           <div class="col-sm-9">
@@ -44,11 +57,11 @@
           <label class="col-sm-3 control-label">Existance</label>
           <div class="col-sm-3">
             <label class="control-label small" for="date_start">MFD: </label>
-            <input type="text" class="form-control" name="date_start" id="date_start" placeholder="Manufacture Date">
+            <input type="date" class="form-control" name="MFD" id="date_start" placeholder="Manufacture Date">
           </div>
           <div class="col-sm-3">
             <label class="control-label small" for="date_finish">EXP:</label>
-            <input type="text" class="form-control" name="date_finish" id="date_finish" placeholder="Expiration Date">
+            <input type="date" class="form-control" name="EXP" id="date_finish" placeholder="Expiration Date">
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">

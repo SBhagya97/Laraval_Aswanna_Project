@@ -15,7 +15,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           @foreach ($products as $item)
-        <div class="item {{$item['id']==7?'active':''}}">
+        <div class="item {{$item['id']==2?'active':''}}">
         <a href="detail/{{$item['id']}}">
               <img class="slider-img" src="product_image/{{$item['gallery']}}"> <!-- {{$item['gallery']}} -->
             <div class="carousel-caption slider-text">

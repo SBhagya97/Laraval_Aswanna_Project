@@ -42,6 +42,7 @@ if(Session::has('user'))//shashila
             <ul class="dropdown-menu">
               <li><a href="/logout">Logout</a></li>
               <li><a href="/add_product">Add Crops</a></li>
+              <li><a href="/my_product">My Products</a></li>
             </ul>
           </li>
           @else

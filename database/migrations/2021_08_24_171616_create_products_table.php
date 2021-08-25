@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->string("quantity");
             $table->string("category");
             $table->string("description");
+            $table->string("MFD");
+            $table->string("EXP");
             $table->string("gallery");
             $table->timestamps();
         });

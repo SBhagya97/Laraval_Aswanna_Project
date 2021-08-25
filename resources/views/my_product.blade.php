@@ -3,12 +3,12 @@
 <div class="custom-product">
      <div class="col-sm-10">
         <div class="trending-wrapper">
-            <h4>Result for Products</h4>
-            <a class="btn btn-success" href="ordernow">Order Now</a> <br> <br>
+            <h4>My Products</h4>
+            
             @foreach($products as $item)
             <div class=" row searched-item cart-list-devider">
              <div class="col-sm-3">
-                <a href="detail/{{$item->id}}">
+                <a href="/detail/{{$item->id}}">
                     <img class="trending-image" src="product_image/{{$item->gallery}}">
                   </a>
              </div>
@@ -19,12 +19,12 @@
                     </div>
              </div>
              <div class="col-sm-3">
-                <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning" >Remove to Cart</a>
+                <a href="/removeProduct/{{$item->user_id}}" class="btn btn-warning" >Remove Product</a>
              </div>
             </div>
             @endforeach
           </div>
-          <a class="btn btn-success" href="ordernow">Order Now</a> <br> <br>
+          <a class="btn btn-success" href="/">Return Home</a> <br> <br>
 
      </div>
 </div>
